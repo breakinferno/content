@@ -8,11 +8,11 @@ import (
 	"github.com/sundogrd/content"
 )
 
-func TestGet(t *testing.T) {
+func TestUpdateContent(t *testing.T) {
 	ctx := context.Background()
-	req := &content.GetRequest{}
+	req := &content.UpdateContentRequest{}
 
-	res, err := cli.Get(ctx, req)
+	res, err := cli.UpdateContent(ctx, req)
 	assert.Nil(t, err)
 	assert.NotNil(t, res)
 }

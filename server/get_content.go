@@ -7,6 +7,6 @@ import (
 	"github.com/sundogrd/content"
 )
 
-func (s ContentServer) Get(ctx context.Context, r *content.GetRequest) (*content.GetResponse, error) {
+func (s ContentServer) GetContent(ctx context.Context, r *content.GetContentRequest) (*content.GetContentResponse, error) {
 	return nil, errors.New("not yet implemented")
 }

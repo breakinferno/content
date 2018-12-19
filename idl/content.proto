@@ -1,0 +1,53 @@
+syntax = "proto3";
+option go_package = "github.com/sundogrd/content";
+package content;
+// import "./common.proto";
+
+message ContentInfo {
+  string content_id = 1;
+  string title = 2;
+  string brief = 3;
+
+  // ... other properties
+}
+
+message GetContentRequest {
+  string id = 1;
+}
+message GetContentResponse {
+  string id = 1;
+}
+message ListContentsRequest {
+  string page = 1;
+  int32 page_size = 2;
+}
+message ListContentsResponse {
+  repeated ContentInfo contents = 1;
+  string next_page_token = 2;
+}
+message CreateContentRequest {
+  string id = 1;
+}
+message CreateContentResponse {
+  string id = 1;
+}
+message UpdateContentRequest {
+  string id = 1;
+}
+message UpdateContentResponse {
+  string id = 1;
+}
+message DeleteContentRequest {
+  string id = 1;
+}
+message DeleteContentResponse {
+  string id = 1;
+}
+
+service Content {
+  rpc GetContent(GetContentRequest) returns (GetContentResponse) {}
+  rpc ListContents(ListContentsRequest) returns (ListContentsResponse) {}
+  rpc CreateContent(CreateContentRequest) returns (CreateContentResponse) {}
+  rpc UpdateContent(UpdateContentRequest) returns (UpdateContentResponse) {}
+  rpc DeleteContent(DeleteContentRequest) returns (DeleteContentResponse) {}
+}

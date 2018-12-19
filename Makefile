@@ -6,7 +6,7 @@ GOPATH:=$(shell go env GOPATH)
 
 proto:
 	go get github.com/golang/protobuf/protoc-gen-go
-	protoc -I . content.proto --lile-server_out=. --go_out=plugins=grpc:${GOPATH}/src
+	protoc -I . ./idl/content.proto --lile-server_out=. --go_out=plugins=grpc:${GOPATH}/src
 
 build: proto
 	go build -o build/sundogrd/content sundogrd/content/main.go
